@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import QuickActions from '@/components/QuickActions';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Gallery from '@/components/Gallery';
@@ -11,8 +12,8 @@ import Footer from '@/components/Footer';
 
 /**
  * Home Page - Academia Atlética
- * Design: Modernismo Minimalista com Energia Cinética
- * Seções: Hero, Sobre, Serviços, Galeria, Depoimentos, Horários, CTA, Contato, Footer
+ * Design: Modernismo Minimalista, otimizado para mobile
+ * Seções: Hero, QuickActions, Sobre, Serviços, Galeria, Depoimentos, Horários, CTA, Contato, Footer
  */
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <QuickActions />
         <About />
         <Services />
         <Gallery />

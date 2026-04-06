@@ -1,204 +1,103 @@
-import { useState } from 'react';
-import { Phone, MapPin, Mail, Send } from 'lucide-react';
+import { Phone, MapPin, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
 
 /**
- * Contact Section - Modernismo Minimalista
- * Design: Formulário limpo, informações de contato, CTA em laranja
- * Funcionalidade: Formulário com validação
+ * Contact Section - Otimizado para Mobile
+ * Design: Botões de ação diretos, informações claras
+ * Funcionalidade: Links diretos para contato
  */
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      toast.error('Por favor, preencha todos os campos');
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      // Simular envio (em produção, seria uma chamada à API)
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      toast.success('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (error) {
-      toast.error('Erro ao enviar mensagem. Tente novamente.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: 'Telefone',
-      value: '(83) 98155-1195',
-      link: 'tel:+5583981551195',
-    },
-    {
-      icon: MapPin,
-      title: 'Endereço',
-      value: 'Rua João Dias Corrêa, 60 - Centro, Massaranduba - PB',
-      link: 'https://maps.google.com/?q=Rua+João+Dias+Corrêa,+60,+Massaranduba,+PB',
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'contato@academiaatetlica.com.br',
-      link: 'mailto:contato@academiaatetlica.com.br',
-    },
-  ];
+  const whatsappMessage = encodeURIComponent(
+    'Olá! Gostaria de conhecer mais sobre os planos de academia. Qual seria a melhor forma de começar?'
+  );
+  const whatsappLink = `https://wa.me/5583981551195?text=${whatsappMessage}`;
+  const mapsLink =
+    'https://www.google.com/maps/search/Rua+João+Dias+Corrêa,+60,+Massaranduba,+PB/@-6.3,+-35.3,15z';
 
   return (
-    <section id="contato" className="py-20 md:py-32 bg-gray-50">
+    <section id="contato" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
-        <div className="mb-16 md:mb-24">
+        <div className="mb-12 md:mb-16 text-center">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Contato</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
-            Vamos conversar
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+            Entre em contato conosco
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
-            Entre em contato conosco para tirar dúvidas, agendar uma visita ou começar sua jornada fitness.
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto">
+            Escolha a melhor forma de nos contactar. Estamos prontos para ajudar!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Info */}
-          <div className="lg:col-span-1">
-            <div className="space-y-8">
-              {contactInfo.map((info, index) => {
-                const Icon = info.icon;
-                return (
-                  <a
-                    key={index}
-                    href={info.link}
-                    target={info.link.startsWith('https') ? '_blank' : undefined}
-                    rel={info.link.startsWith('https') ? 'noopener noreferrer' : undefined}
-                    className="group flex gap-4 p-6 rounded-lg border border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 hover:bg-white"
-                  >
-                    <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-orange-100 transition-colors">
-                      <Icon size={24} className="text-orange-500" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-1">
-                        {info.title}
-                      </p>
-                      <p className="text-gray-900 font-semibold group-hover:text-orange-500 transition-colors">
-                        {info.value}
-                      </p>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-
-            {/* Quick Actions */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-4">Ações Rápidas</p>
-              <div className="space-y-3">
-                <a href="tel:+5583981551195" className="w-full">
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white gap-2">
-                    <Phone size={18} />
-                    Ligar Agora
-                  </Button>
-                </a>
-                <a
-                  href="https://maps.google.com/?q=Rua+João+Dias+Corrêa,+60,+Massaranduba,+PB"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button variant="outline" className="w-full gap-2">
-                    <MapPin size={18} />
-                    Ver no Mapa
-                  </Button>
-                </a>
+        {/* Contact Options */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+          {/* WhatsApp */}
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="group">
+            <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-green-400 hover:shadow-lg transition-all duration-300 h-full">
+              <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+                <MessageCircle size={28} className="text-green-600" />
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
+              <p className="text-gray-600 mb-4 text-sm md:text-base">
+                Envie uma mensagem pelo WhatsApp e receba uma resposta rápida.
+              </p>
+              <p className="text-lg font-semibold text-green-600">(83) 98155-1195</p>
+            </div>
+          </a>
+
+          {/* Google Maps */}
+          <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="group">
+            <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-red-400 hover:shadow-lg transition-all duration-300 h-full">
+              <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors">
+                <MapPin size={28} className="text-red-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Localização</h3>
+              <p className="text-gray-600 mb-4 text-sm md:text-base">
+                Visite-nos no endereço abaixo. Veja a rota no Google Maps.
+              </p>
+              <p className="text-sm md:text-base font-semibold text-red-600">
+                Rua João Dias Corrêa, 60<br />
+                Massaranduba - PB
+              </p>
+            </div>
+          </a>
+
+          {/* Telefone */}
+          <a href="tel:+5583981551195" className="group">
+            <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 h-full">
+              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                <Phone size={28} className="text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Telefone</h3>
+              <p className="text-gray-600 mb-4 text-sm md:text-base">
+                Ligue direto para falar com nosso atendimento.
+              </p>
+              <p className="text-lg font-semibold text-blue-600">(83) 98155-1195</p>
+            </div>
+          </a>
+
+          {/* Email */}
+          <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300">
+            <div className="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+              <Mail size={28} className="text-orange-600" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Horários</h3>
+            <div className="text-gray-600 text-sm md:text-base">
+              <p className="font-semibold text-gray-900 mb-2">Segunda a Sexta:</p>
+              <p className="mb-3">05:45 - 11:00 | 14:00 - 21:30</p>
+              <p className="font-semibold text-gray-900 mb-2">Sábado:</p>
+              <p>07:00 - 10:00</p>
             </div>
           </div>
+        </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="lg:col-span-2 bg-white p-8 md:p-12 rounded-lg border border-gray-200">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Nome Completo</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Seu nome"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="seu@email.com"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all"
-                />
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Telefone</label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="(83) 98155-1195"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all"
-              />
-            </div>
-
-            <div className="mb-8">
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Mensagem</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Conte-nos sobre seus objetivos fitness..."
-                rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all resize-none"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 text-lg font-semibold gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Send size={20} />
-              {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+        {/* CTA Button */}
+        <div className="text-center">
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+            <Button className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 md:py-6 text-base md:text-lg font-semibold gap-2 rounded-xl shadow-lg">
+              <MessageCircle size={20} />
+              Enviar Mensagem pelo WhatsApp
             </Button>
-          </form>
+          </a>
         </div>
       </div>
     </section>

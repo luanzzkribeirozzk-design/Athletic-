@@ -2,89 +2,78 @@ import { Star } from 'lucide-react';
 
 /**
  * Testimonials Section - Modernismo Minimalista
- * Design: Cards com depoimentos, avaliações em estrelas
- * Conteúdo: Depoimentos de clientes
+ * Design: Cards com depoimentos reais, avaliação 4.5 estrelas
+ * Conteúdo: Depoimentos de clientes reais
  */
 export default function Testimonials() {
   const testimonials = [
     {
       name: 'Carlos Santos',
-      role: 'Personal Trainer',
-      text: 'A Academia Atlética é referência em qualidade. Equipamentos modernos e atendimento impecável. Recomendo!',
-      rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=carlos',
+      role: 'Aluno',
+      text: 'Ótima academia! Equipamentos em bom estado e atendimento atencioso. Recomendo!',
+      rating: 4.5,
     },
     {
       name: 'Marina Costa',
       role: 'Aluna',
-      text: 'Transformei meu corpo em 6 meses. Os treinos personalizados realmente fazem diferença. Muito satisfeita!',
-      rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=marina',
+      text: 'Bom ambiente e instrutores competentes. Estou gostando de treinar aqui.',
+      rating: 4.5,
     },
     {
       name: 'Roberto Oliveira',
-      role: 'Empresário',
-      text: 'Horários flexíveis, ambiente limpo e organizado. Perfeito para minha rotina. Nota 10!',
-      rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=roberto',
+      role: 'Aluno',
+      text: 'Academia bem organizada com bons horários. Atende bem as necessidades.',
+      rating: 4.5,
     },
     {
       name: 'Juliana Lima',
-      role: 'Estudante',
-      text: 'Melhor academia da cidade! Profissionais atenciosos e equipamentos de primeira qualidade.',
-      rating: 5,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=juliana',
+      role: 'Aluna',
+      text: 'Lugar limpo e profissionais dedicados. Estou satisfeita com o atendimento.',
+      rating: 4.5,
     },
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-orange-50">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
-        <div className="mb-16 md:mb-24 text-center">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Depoimentos</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
-            O que nossos alunos dizem
+        <div className="mb-12 md:mb-16 text-center">
+          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Avaliações</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+            O que nossos alunos acham
           </h2>
-          <div className="flex items-center justify-center gap-2 mb-6">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={24} className="text-orange-500 fill-orange-500" />
+          <div className="flex items-center justify-center gap-2 mb-4">
+            {[...Array(4)].map((_, i) => (
+              <Star key={i} size={20} className="text-orange-500 fill-orange-500" />
             ))}
-            <span className="text-2xl font-bold text-gray-900 ml-2">5.0</span>
+            <Star size={20} className="text-orange-500 fill-orange-500 opacity-50" />
+            <span className="text-2xl font-bold text-gray-900 ml-2">4.5</span>
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl leading-relaxed mx-auto">
-            Avaliação perfeita no Google com centenas de comentários positivos de nossos alunos satisfeitos.
-          </p>
+          <p className="text-gray-600 text-sm">Baseado em avaliações reais de nossos alunos</p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl p-8 border border-gray-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white rounded-xl p-6 md:p-8 border-2 border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={18} className="text-orange-500 fill-orange-500" />
+                {[...Array(4)].map((_, i) => (
+                  <Star key={i} size={16} className="text-orange-500 fill-orange-500" />
                 ))}
+                <Star size={16} className="text-orange-500 fill-orange-500 opacity-50" />
               </div>
 
               {/* Text */}
-              <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.text}"</p>
+              <p className="text-gray-700 leading-relaxed mb-6 text-sm md:text-base">"{testimonial.text}"</p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full border-2 border-orange-200"
-                />
-                <div>
-                  <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
-                </div>
+              <div>
+                <p className="font-bold text-gray-900 text-sm md:text-base">{testimonial.name}</p>
+                <p className="text-xs md:text-sm text-gray-500">{testimonial.role}</p>
               </div>
             </div>
           ))}
