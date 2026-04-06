@@ -26,10 +26,7 @@ export default function Gallery() {
       url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/training-session-ay7xnwpEB6ctWXiEr2YAy5.webp',
       title: 'Treino Personalizado',
     },
-    {
-      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/fitness-motivation-Gg3gBKiJByNoyqLZ92n7yt.webp',
-      title: 'Ambiente Motivador',
-    },
+
     {
       url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/hero-academia-3njb8eYRuUHM8MRW5wQtya.webp',
       title: 'Estrutura Completa',
