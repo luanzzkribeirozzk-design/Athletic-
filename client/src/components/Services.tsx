@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Dumbbell, User, Clock, Sparkles } from 'lucide-react';
+import { Dumbbell, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ServiceModal from './ServiceModal';
 
@@ -54,20 +54,7 @@ export default function Services() {
         'Acesso ilimitado durante o funcionamento',
       ],
     },
-    {
-      id: 'ambiente-premium',
-      icon: Sparkles,
-      title: 'Ambiente Premium',
-      description: 'Organização impecável, limpeza rigorosa e atendimento próximo.',
-      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/fitness-motivation-Gg3gBKiJByNoyqLZ92n7yt.webp',
-      details: [
-        'Limpeza profissional diária',
-        'Ar condicionado e ventilação premium',
-        'Banheiros modernos e higienizados',
-        'Atendimento personalizado',
-        'Comunidade acolhedora e motivadora',
-      ],
-    },
+
   ];
 
   return (
