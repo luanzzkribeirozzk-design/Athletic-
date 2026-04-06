@@ -14,25 +14,25 @@ export default function PremiumEnvironment() {
       id: 1,
       title: 'Sala de Musculação',
       description: 'Equipamentos modernos renovados em 2025',
-      url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop',
+      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/academia-musculacao-gGakQfSacL4JsoeCchRx7z.webp',
     },
     {
       id: 2,
       title: 'Área de Cardio',
       description: 'Equipamentos de última geração',
-      url: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&h=600&fit=crop',
+      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/academia-cardio-9VaJFKS7TPaSdYwNoGL4n2.webp',
     },
     {
       id: 3,
       title: 'Treino Personalizado',
       description: 'Profissionais qualificados disponíveis',
-      url: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop',
+      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/academia-treino-4escHr2GEu8ccTWxcahRmC.webp',
     },
     {
       id: 4,
       title: 'Ambiente Climatizado',
       description: 'Conforto e bem-estar garantidos',
-      url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop',
+      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/academia-ambiente-UQYZxaUwokJgJk9TahH5bz.webp',
     },
   ];
 
