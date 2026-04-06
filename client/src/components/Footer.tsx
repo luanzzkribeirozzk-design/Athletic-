@@ -84,10 +84,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6">Informações</h4>
             <ul className="space-y-3">
-              <li>
-                <p className="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">CNPJ</p>
-                <p className="text-gray-400 text-sm font-mono">63.607.260/0001-40</p>
-              </li>
+
               <li>
                 <p className="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Avaliação</p>
                 <p className="text-green-500 font-bold text-lg">★★★★☆ 4.5</p>

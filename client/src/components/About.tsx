@@ -68,12 +68,7 @@ export default function About() {
         {/* Info Box */}
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 md:p-10 border-2 border-green-500/20 text-white">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-            <div className="group">
-              <p className="text-xs md:text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">CNPJ</p>
-              <p className="text-2xl md:text-3xl font-bold text-green-400 group-hover:text-green-300 transition-colors">
-                63.607.260/0001-40
-              </p>
-            </div>
+
             <div className="group">
               <p className="text-xs md:text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Localização</p>
               <p className="text-base md:text-lg font-semibold text-white">Rua João Dias Corrêa, 60</p>
