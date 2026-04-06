@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="font-bold text-white">Athletic Academia</h3>
-                <p className="text-xs text-gray-400">Massaranduba - PB</p>
+                <p className="text-xs text-gray-400">Caxias do Sul - RS</p>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mt-4">
@@ -67,14 +67,14 @@ export default function Footer() {
                 <MapPin size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
                   Rua João Dias Corrêa, 60<br />
-                  Centro - Massaranduba, PB
+                  Caxias do Sul - RS
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
-                  Seg-Sex: 05:45 - 21:30<br />
-                  Sáb: 07:00 - 10:00
+                  Seg-Sex: 7h - 22h<br />
+                  Sáb: 9h - 16h
                 </span>
               </li>
             </ul>

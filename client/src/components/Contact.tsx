@@ -55,8 +55,7 @@ export default function Contact() {
                 Visite-nos no endereço abaixo. Veja a rota no Google Maps.
               </p>
               <p className="text-sm md:text-base font-semibold text-red-600">
-                Rua João Dias Corrêa, 60<br />
-                Massaranduba - PB
+                Caxias do Sul - RS
               </p>
             </div>
           </a>
@@ -83,9 +82,11 @@ export default function Contact() {
             <h3 className="text-xl font-bold text-gray-900 mb-2">Horários</h3>
             <div className="text-gray-600 text-sm md:text-base">
               <p className="font-semibold text-gray-900 mb-2">Segunda a Sexta:</p>
-              <p className="mb-3">05:45 - 11:00 | 14:00 - 21:30</p>
+              <p className="mb-3">7h - 22h (sem fechar ao meio dia)</p>
               <p className="font-semibold text-gray-900 mb-2">Sábado:</p>
-              <p>07:00 - 10:00</p>
+              <p className="mb-3">9h - 16h</p>
+              <p className="font-semibold text-gray-900 mb-2">Domingo:</p>
+              <p>Fechado</p>
             </div>
           </div>
         </div>

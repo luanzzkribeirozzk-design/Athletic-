@@ -25,7 +25,7 @@ export default function About() {
     {
       icon: MapPin,
       title: 'Localização Estratégica',
-      description: 'Centro de Massaranduba',
+      description: 'Caxias do Sul - RS',
     },
   ];
 
@@ -77,7 +77,7 @@ export default function About() {
             <div className="group">
               <p className="text-xs md:text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Localização</p>
               <p className="text-base md:text-lg font-semibold text-white">Rua João Dias Corrêa, 60</p>
-              <p className="text-sm md:text-base text-gray-300">Centro - Massaranduba, PB</p>
+              <p className="text-sm md:text-base text-gray-300">Caxias do Sul - RS</p>
             </div>
             <div className="group">
               <p className="text-xs md:text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Contato</p>

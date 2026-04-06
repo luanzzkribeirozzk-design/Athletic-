@@ -7,8 +7,8 @@ import { Clock, Calendar } from 'lucide-react';
  */
 export default function Schedule() {
   const schedules = [
-    { day: 'Segunda a Sexta', morning: '05:45 - 11:00', afternoon: '14:00 - 21:30', badge: 'Completo' },
-    { day: 'Sábado', morning: '07:00 - 10:00', afternoon: '-', badge: 'Manhã' },
+    { day: 'Segunda a Sexta', morning: '7h - 22h', afternoon: 'Sem fechar', badge: 'Completo' },
+    { day: 'Sábado', morning: '9h - 16h', afternoon: '-', badge: 'Reduzido' },
     { day: 'Domingo', morning: 'Fechado', afternoon: '-', badge: 'Fechado' },
   ];
 
