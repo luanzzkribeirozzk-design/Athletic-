@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { X, Chrome, AlertCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, Chrome, Loader } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
@@ -10,95 +10,95 @@ interface LoginModalProps {
 }
 
 /**
- * Login Modal - Autenticação com Google e Email/Senha
- * Design: Modal elegante com validação adequada
+ * Login Modal - Autenticação com Google OAuth 2.0
+ * Design: Modal elegante com autenticação real via Google
  */
 export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginModalProps) {
   const [isLoading, setIsLoading] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [googleScriptLoaded, setGoogleScriptLoaded] = useState(false);
 
-  // Validação de email
-  const validateEmail = (emailValue: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(emailValue);
-  };
-
-  // Validação de senha
-  const validatePassword = (passwordValue: string): boolean => {
-    return passwordValue.length >= 6;
-  };
-
-  const handleGoogleLogin = async () => {
-    setIsLoading(true);
-    try {
-      // Simular login com Google
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      const mockUser = {
-        name: 'João Silva',
-        email: 'joao@example.com',
-        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=joao',
+  // Carregar Google Sign-In Script
+  useEffect(() => {
+    if (!window.google) {
+      const script = document.createElement('script');
+      script.src = 'https://accounts.google.com/gsi/client';
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        setGoogleScriptLoaded(true);
+        if (isOpen && window.google) {
+          initializeGoogleSignIn();
+        }
       };
+      document.head.appendChild(script);
+    } else {
+      setGoogleScriptLoaded(true);
+      if (isOpen) {
+        initializeGoogleSignIn();
+      }
+    }
+  }, [isOpen]);
 
-      onLoginSuccess(mockUser);
-      toast.success(`Bem-vindo, ${mockUser.name}!`);
-      onClose();
-    } catch (error) {
-      toast.error('Erro ao fazer login. Tente novamente.');
-    } finally {
-      setIsLoading(false);
+  const initializeGoogleSignIn = () => {
+    const googleWindow = window as any;
+    if (googleWindow.google) {
+      try {
+        googleWindow.google.accounts.id.initialize({
+          client_id: '1234567890-abcdefghijklmnopqrstuvwxyz.apps.googleusercontent.com', // Substitua com seu Client ID
+          callback: handleGoogleResponse,
+          auto_select: false,
+        });
+
+        // Renderizar botão do Google
+        const buttonContainer = document.getElementById('google-signin-button');
+        if (buttonContainer && !buttonContainer.querySelector('[data-google-button]')) {
+          googleWindow.google.accounts.id.renderButton(buttonContainer, {
+            theme: 'outline',
+            size: 'large',
+            width: '100%',
+            text: 'signin_with',
+          });
+        }
+      } catch (error) {
+        console.error('Erro ao inicializar Google Sign-In:', error);
+      }
     }
   };
 
-  const handleEmailLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const newErrors: { email?: string; password?: string } = {};
+  const handleGoogleResponse = (response: any) => {
+    if (response.credential) {
+      setIsLoading(true);
+      try {
+        // Decodificar JWT token
+        const base64Url = response.credential.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(
+          atob(base64)
+            .split('')
+            .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+            .join('')
+        );
 
-    // Validar email
-    if (!email.trim()) {
-      newErrors.email = 'Email é obrigatório';
-    } else if (!validateEmail(email)) {
-      newErrors.email = 'Email inválido';
-    }
+        const userData = JSON.parse(jsonPayload);
 
-    // Validar senha
-    if (!password.trim()) {
-      newErrors.password = 'Senha é obrigatória';
-    } else if (!validatePassword(password)) {
-      newErrors.password = 'Senha deve ter no mínimo 6 caracteres';
-    }
+        // Simular delay de processamento
+        setTimeout(() => {
+          const user = {
+            name: userData.name || userData.email.split('@')[0],
+            email: userData.email,
+            avatar: userData.picture || `https://api.dicebear.com/7.x/avataaars/svg?seed=${userData.email}`,
+          };
 
-    setErrors(newErrors);
-
-    // Se houver erros, não fazer login
-    if (Object.keys(newErrors).length > 0) {
-      toast.error('Por favor, corrija os erros abaixo');
-      return;
-    }
-
-    // Se passou na validação, fazer login
-    setIsLoading(true);
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      const mockUser = {
-        name: email.split('@')[0],
-        email: email,
-        avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${email}`,
-      };
-
-      onLoginSuccess(mockUser);
-      toast.success(`Bem-vindo, ${mockUser.name}!`);
-      setEmail('');
-      setPassword('');
-      setErrors({});
-      onClose();
-    } catch (error) {
-      toast.error('Erro ao fazer login. Tente novamente.');
-    } finally {
-      setIsLoading(false);
+          onLoginSuccess(user);
+          toast.success(`Bem-vindo, ${user.name}!`);
+          onClose();
+          setIsLoading(false);
+        }, 1000);
+      } catch (error) {
+        console.error('Erro ao processar login:', error);
+        toast.error('Erro ao fazer login com Google. Tente novamente.');
+        setIsLoading(false);
+      }
     }
   };
 
@@ -106,121 +106,67 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fade-in p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-fade-in-up max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-fade-in-up">
         {/* Header */}
-        <div className="relative h-32 bg-gradient-to-br from-orange-500 to-orange-600 rounded-t-2xl flex items-center justify-center sticky top-0">
+        <div className="relative h-40 bg-gradient-to-br from-orange-500 to-orange-600 rounded-t-2xl flex items-center justify-center">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
+            className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-lg transition-colors z-10"
           >
             <X size={24} className="text-white" />
           </button>
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-white">Academia Atlética</h2>
-            <p className="text-orange-100 text-sm mt-1">Faça login para continuar</p>
+            <h2 className="text-3xl font-bold text-white">Academia Atlética</h2>
+            <p className="text-orange-100 text-sm mt-2">Faça login com sua conta Google</p>
           </div>
         </div>
 
         {/* Content */}
         <div className="p-8">
-          <div className="mb-8">
-            <p className="text-gray-600 text-center mb-6">
-              Acesse sua conta para gerenciar seus treinos e acompanhar seu progresso.
+          <div className="mb-6">
+            <p className="text-gray-600 text-center mb-8 leading-relaxed">
+              Acesse sua conta para gerenciar seus treinos, acompanhar seu progresso e receber dicas personalizadas.
             </p>
 
-            <div className="space-y-3">
+            {/* Loading State */}
+            {isLoading && (
+              <div className="flex flex-col items-center justify-center py-8">
+                <Loader size={40} className="text-orange-500 animate-spin mb-4" />
+                <p className="text-gray-600 font-semibold">Autenticando com Google...</p>
+              </div>
+            )}
+
+            {/* Google Sign-In Button Container */}
+            {!isLoading && (
+              <div
+                id="google-signin-button"
+                data-google-button="true"
+                className="flex justify-center"
+              />
+            )}
+
+            {/* Fallback Button if Script Not Loaded */}
+            {!googleScriptLoaded && !isLoading && (
               <Button
-                onClick={handleGoogleLogin}
-                disabled={isLoading}
-                className="w-full bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 py-3 font-semibold gap-3 transition-all disabled:opacity-50 rounded-lg"
+                disabled
+                className="w-full bg-gray-300 text-gray-600 py-3 font-semibold gap-3 rounded-lg"
               >
                 <Chrome size={20} />
-                {isLoading ? 'Conectando...' : 'Entrar com Google'}
+                Carregando Google Sign-In...
               </Button>
-            </div>
+            )}
           </div>
 
-          {/* Divider */}
-          <div className="flex items-center gap-3 mb-6">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-gray-400 text-sm">ou</span>
-            <div className="flex-1 h-px bg-gray-200" />
+          {/* Info Box */}
+          <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
+            <p className="text-blue-900 text-sm">
+              <span className="font-semibold">🔒 Seguro:</span> Sua senha nunca é compartilhada conosco. Usamos autenticação segura do Google.
+            </p>
           </div>
-
-          {/* Email Login Form */}
-          <form onSubmit={handleEmailLogin} className="space-y-4">
-            {/* Email Field */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  if (errors.email) setErrors({ ...errors, email: undefined });
-                }}
-                placeholder="seu@email.com"
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all ${
-                  errors.email
-                    ? 'border-red-500 focus:ring-red-200'
-                    : 'border-gray-300 focus:border-orange-500 focus:ring-orange-200'
-                }`}
-              />
-              {errors.email && (
-                <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
-                  <AlertCircle size={16} />
-                  {errors.email}
-                </div>
-              )}
-            </div>
-
-            {/* Password Field */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Senha</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  if (errors.password) setErrors({ ...errors, password: undefined });
-                }}
-                placeholder="Mínimo 6 caracteres"
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all ${
-                  errors.password
-                    ? 'border-red-500 focus:ring-red-200'
-                    : 'border-gray-300 focus:border-orange-500 focus:ring-orange-200'
-                }`}
-              />
-              {errors.password && (
-                <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
-                  <AlertCircle size={16} />
-                  {errors.password}
-                </div>
-              )}
-            </div>
-
-            {/* Submit Button */}
-            <Button
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 font-semibold rounded-lg transition-all disabled:opacity-50"
-            >
-              {isLoading ? 'Entrando...' : 'Entrar'}
-            </Button>
-          </form>
-
-          {/* Footer */}
-          <p className="text-center text-gray-500 text-sm mt-6">
-            Não tem conta?{' '}
-            <button
-              onClick={() => toast.info('Funcionalidade de cadastro em breve!')}
-              className="text-orange-500 hover:text-orange-600 font-semibold transition-colors"
-            >
-              Cadastre-se
-            </button>
-          </p>
         </div>
       </div>
     </div>
   );
 }
+
+
