@@ -90,7 +90,7 @@ export default function Footer() {
               </li>
               <li>
                 <p className="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Avaliação</p>
-                <p className="text-orange-500 font-bold text-lg">★★★★★ 5.0</p>
+                <p className="text-orange-500 font-bold text-lg">★★★★☆ 4.5</p>
               </li>
             </ul>
           </div>

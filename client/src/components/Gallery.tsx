@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { X } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 
 /**
- * Gallery Section - Modernismo Minimalista
- * Design: Grid de fotos com modal de visualização
- * Conteúdo: Fotos do interior da academia
+ * Gallery Section - Design Profissional
+ * Design: Grid de fotos com modal elegante
+ * Funcionalidade: Clique para ampliar
  */
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -37,34 +37,35 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-16 md:py-32 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
-        <div className="mb-16 md:mb-24">
+        <div className="mb-12 md:mb-20 text-center">
           <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Galeria</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 mb-4">
             Conheça nosso espaço
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
-            Explore as instalações modernas e bem organizadas da Academia Atlética.
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto">
+            Explore as instalações modernas e bem organizadas da Academia Atlética. Clique nas fotos para ampliar.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {images.map((image, index) => (
             <div
               key={index}
               onClick={() => setSelectedImage(image.url)}
-              className="group relative h-64 rounded-xl overflow-hidden cursor-pointer"
+              className="group relative h-48 md:h-64 rounded-2xl overflow-hidden cursor-pointer"
             >
               <img
                 src={image.url}
                 alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <p className="text-white font-semibold">{image.title}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-end justify-between p-4 md:p-6">
+                <ZoomIn size={24} className="text-white" />
+                <p className="text-white font-bold text-lg md:text-xl">{image.title}</p>
               </div>
             </div>
           ))}
@@ -74,10 +75,10 @@ export default function Gallery() {
       {/* Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in p-4"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-4xl w-full mx-4 animate-fade-in-up">
+          <div className="relative max-w-5xl w-full animate-fade-in-up">
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute -top-12 right-0 p-2 hover:bg-white/20 rounded-lg transition-colors"
@@ -87,7 +88,7 @@ export default function Gallery() {
             <img
               src={selectedImage}
               alt="Galeria"
-              className="w-full h-auto rounded-xl"
+              className="w-full h-auto rounded-2xl shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />
           </div>
