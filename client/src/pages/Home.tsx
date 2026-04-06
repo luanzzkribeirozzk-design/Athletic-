@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import QuickActions from '@/components/QuickActions';
 import About from '@/components/About';
 import Services from '@/components/Services';
+import PremiumEnvironment from '@/components/PremiumEnvironment';
 import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
 import Schedule from '@/components/Schedule';
@@ -24,6 +25,7 @@ export default function Home() {
         <QuickActions />
         <About />
         <Services />
+        <PremiumEnvironment />
         <Gallery />
         <Testimonials />
         <Schedule />
