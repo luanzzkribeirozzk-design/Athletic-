@@ -39,7 +39,7 @@ export default function About() {
             Referência em Fitness
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
-            A Academia Atlética é a unidade de referência na cidade, reconhecida pelo atendimento próximo,
+            A Athletic Academia é a unidade de referência na cidade, reconhecida pelo atendimento próximo,
             organização impecável e compromisso com o sucesso de cada aluno.
           </p>
         </div>

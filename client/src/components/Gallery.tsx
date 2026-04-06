@@ -43,7 +43,7 @@ export default function Gallery() {
             Conheça nosso espaço
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto">
-            Explore as instalações modernas e bem organizadas da Academia Atlética. Clique nas fotos para ampliar.
+            Explore as instalações modernas e bem organizadas da Athletic Academia. Clique nas fotos para ampliar.
           </p>
         </div>
 

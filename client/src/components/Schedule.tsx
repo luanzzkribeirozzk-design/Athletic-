@@ -80,7 +80,7 @@ export default function Schedule() {
             <div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Aberto o Ano Todo</h3>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                A Academia Atlética funciona durante todo o ano, com horários especiais em feriados.
+                A Athletic Academia funciona durante todo o ano, com horários especiais em feriados.
                 Consulte-nos para informações sobre datas específicas.
               </p>
             </div>

@@ -63,7 +63,7 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
             <X size={24} className="text-white" />
           </button>
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white">Academia Atlética</h2>
+            <h2 className="text-3xl font-bold text-white">Athletic Academia</h2>
             <p className="text-orange-100 text-sm mt-2">Acesse sua conta</p>
           </div>
         </div>

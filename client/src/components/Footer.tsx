@@ -19,7 +19,7 @@ export default function Footer() {
                 <span className="text-white font-bold text-lg">AA</span>
               </div>
               <div>
-                <h3 className="font-bold text-white">Academia Atlética</h3>
+                <h3 className="font-bold text-white">Athletic Academia</h3>
                 <p className="text-xs text-gray-400">Massaranduba - PB</p>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm">
-            &copy; {currentYear} Academia Atlética. Todos os direitos reservados.
+            &copy; {currentYear} Athletic Academia. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors text-sm">
