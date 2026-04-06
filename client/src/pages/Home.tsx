@@ -2,14 +2,17 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
+import Gallery from '@/components/Gallery';
+import Testimonials from '@/components/Testimonials';
 import Schedule from '@/components/Schedule';
+import CTASection from '@/components/CTASection';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 /**
  * Home Page - Academia Atlética
  * Design: Modernismo Minimalista com Energia Cinética
- * Seções: Hero, Sobre, Serviços, Horários, Contato, Footer
+ * Seções: Hero, Sobre, Serviços, Galeria, Depoimentos, Horários, CTA, Contato, Footer
  */
 export default function Home() {
   return (
@@ -19,7 +22,10 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <Gallery />
+        <Testimonials />
         <Schedule />
+        <CTASection />
         <Contact />
       </main>
       <Footer />

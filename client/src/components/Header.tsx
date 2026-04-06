@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import LoginModal from './LoginModal';
+import UserProfile from './UserProfile';
 
 /**
  * Header Component - Modernismo Minimalista
@@ -9,6 +11,8 @@ import { Button } from '@/components/ui/button';
  */
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [user, setUser] = useState<{ name: string; email: string; avatar?: string } | null>(null);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -62,6 +66,17 @@ export default function Header() {
 
         {/* CTA Button - Desktop */}
         <div className="hidden md:flex items-center gap-4">
+          {user ? (
+            <UserProfile user={user} onLogout={() => setUser(null)} />
+          ) : (
+            <Button
+              onClick={() => setLoginModalOpen(true)}
+              className="bg-blue-600 hover:bg-blue-700 text-white gap-2"
+            >
+              <LogIn size={18} />
+              Entrar
+            </Button>
+          )}
           <a href="tel:+5583981551195" className="flex items-center gap-2">
             <Button className="bg-orange-500 hover:bg-orange-600 text-white gap-2">
               <Phone size={18} />
@@ -107,6 +122,24 @@ export default function Header() {
             >
               Contato
             </button>
+            {user ? (
+              <>
+                <div className="py-2 px-4 border-t border-gray-100">
+                  <UserProfile user={user} onLogout={() => setUser(null)} />
+                </div>
+              </>
+            ) : (
+              <Button
+                onClick={() => {
+                  setLoginModalOpen(true);
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white gap-2 mb-3"
+              >
+                <LogIn size={18} />
+                Entrar
+              </Button>
+            )}
             <a href="tel:+5583981551195" className="w-full">
               <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white gap-2">
                 <Phone size={18} />
@@ -116,6 +149,13 @@ export default function Header() {
           </nav>
         </div>
       )}
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={loginModalOpen}
+        onClose={() => setLoginModalOpen(false)}
+        onLoginSuccess={(userData) => setUser(userData)}
+      />
     </header>
   );
 }

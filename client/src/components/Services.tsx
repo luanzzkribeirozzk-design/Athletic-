@@ -55,27 +55,29 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="group bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="group bg-white rounded-2xl overflow-hidden border-2 border-gray-200 hover:border-orange-400 hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 cursor-pointer"
               >
                 {/* Image */}
                 <div className="h-48 md:h-56 overflow-hidden bg-gray-100 relative">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <Icon size={24} className="text-white" />
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-8">
-                  <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-100 transition-colors">
-                    <Icon size={24} className="text-orange-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-500 transition-colors">
+                    {service.title}
+                  </h3>
                   <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                    Saiba Mais
+                  <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-lg transition-all group-hover:shadow-lg">
+                    Saiba Mais →
                   </Button>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import { Award, Users, Zap, MapPin } from 'lucide-react';
+import { Award, Users, Zap, MapPin, TrendingUp } from 'lucide-react';
 
 /**
  * About Section - Modernismo Minimalista
@@ -51,12 +51,14 @@ export default function About() {
             return (
               <div
                 key={index}
-                className="group p-8 rounded-lg border border-gray-100 hover:border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group p-8 rounded-2xl border-2 border-gray-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-orange-50 hover:to-white"
               >
-                <div className="w-14 h-14 bg-orange-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-orange-100 transition-colors">
-                  <Icon size={28} className="text-orange-500" />
+                <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-6 group-hover:shadow-lg transition-all">
+                  <Icon size={28} className="text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             );
@@ -64,26 +66,28 @@ export default function About() {
         </div>
 
         {/* Info Box */}
-        <div className="bg-gray-50 rounded-lg p-8 md:p-12 border border-gray-200">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12 border-2 border-orange-500/20 text-white">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-2">CNPJ</p>
-              <p className="text-2xl font-bold text-gray-900">63.607.260/0001-40</p>
+            <div className="group">
+              <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">CNPJ</p>
+              <p className="text-3xl font-bold text-orange-400 group-hover:text-orange-300 transition-colors">
+                63.607.260/0001-40
+              </p>
             </div>
-            <div>
-              <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-2">Localização</p>
-              <p className="text-lg font-semibold text-gray-900">Rua João Dias Corrêa, 60</p>
-              <p className="text-gray-600">Centro - Massaranduba, PB</p>
+            <div className="group">
+              <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Localização</p>
+              <p className="text-lg font-semibold text-white">Rua João Dias Corrêa, 60</p>
+              <p className="text-gray-300">Centro - Massaranduba, PB</p>
             </div>
-            <div>
-              <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-2">Contato</p>
+            <div className="group">
+              <p className="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Contato</p>
               <a
                 href="tel:+5583981551195"
-                className="text-lg font-semibold text-orange-500 hover:text-orange-600 transition-colors"
+                className="text-lg font-semibold text-orange-400 hover:text-orange-300 transition-colors"
               >
                 (83) 98155-1195
               </a>
-              <p className="text-gray-600 text-sm mt-1">Disponível para contato</p>
+              <p className="text-gray-300 text-sm mt-1">Disponível para contato</p>
             </div>
           </div>
         </div>
