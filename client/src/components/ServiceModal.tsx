@@ -61,13 +61,12 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
             </div>
           </div>
 
-          {/* Price */}
-          {service.price && (
-            <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-6 mb-8 border-2 border-orange-200">
-              <p className="text-gray-600 text-sm uppercase font-semibold mb-2">Investimento</p>
-              <p className="text-3xl md:text-4xl font-bold text-orange-600">{service.price}</p>
-            </div>
-          )}
+          {/* CTA Note */}
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 mb-8 border-2 border-blue-200">
+            <p className="text-blue-900 text-sm md:text-base font-semibold">
+              💬 Entre em contato conosco via WhatsApp para conhecer nossos planos e valores atualizados!
+            </p>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4">

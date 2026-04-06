@@ -25,7 +25,6 @@ export default function Services() {
         'Avaliação física inicial gratuita',
         'Programa de treino personalizado',
       ],
-      price: 'A partir de R$ 79,90/mês',
     },
     {
       id: 'treino-personalizado',
@@ -40,7 +39,6 @@ export default function Services() {
         'Ajustes conforme progresso',
         'Consultoria nutricional básica',
       ],
-      price: 'A partir de R$ 150,00/mês',
     },
     {
       id: 'horarios-flexiveis',
@@ -149,7 +147,6 @@ export default function Services() {
                   description: service.description,
                   image: service.image,
                   details: service.details,
-                  price: service.price,
                 }
               : null
           }
