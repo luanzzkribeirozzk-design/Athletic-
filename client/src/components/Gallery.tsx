@@ -38,7 +38,7 @@ export default function Gallery() {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="mb-12 md:mb-20 text-center">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Galeria</span>
+          <span className="text-green-500 font-semibold text-sm uppercase tracking-wider">Galeria</span>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 mb-4">
             Conheça nosso espaço
           </h2>

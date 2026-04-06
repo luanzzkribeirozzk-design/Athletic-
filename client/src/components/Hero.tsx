@@ -17,9 +17,9 @@ export default function Hero() {
   const whatsappMessage = encodeURIComponent(
     'Olá! Gostaria de conhecer mais sobre os planos de academia. Qual seria a melhor forma de começar?'
   );
-  const whatsappLink = `https://wa.me/5583981551195?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/5597125446?text=${whatsappMessage}`;
   const mapsLink =
-    'https://www.google.com/maps/search/Rua+João+Dias+Corrêa,+60,+Massaranduba,+PB/@-6.3,+-35.3,15z';
+    'https://maps.app.goo.gl/p1VRigdFnPebhDFF9';
 
   const features = [
     { icon: Zap, text: 'Equipamentos Modernos' },
@@ -46,17 +46,17 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="flex items-center gap-2 mb-6 md:mb-8 animate-fade-in">
-            <div className="flex items-center gap-2 bg-gradient-to-r from-orange-500/20 to-orange-600/20 backdrop-blur-md px-4 md:px-6 py-3 rounded-full border border-orange-400/40 hover:border-orange-400/60 transition-all">
-              <Star size={16} className="text-orange-400 fill-orange-400" />
-              <span className="text-orange-300 font-bold text-sm md:text-base">Nota 4.5 no Google</span>
-              <span className="text-orange-300/60 text-xs md:text-sm">• Avaliação Real</span>
+            <div className="flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-green-600/20 backdrop-blur-md px-4 md:px-6 py-3 rounded-full border border-green-400/40 hover:border-green-400/60 transition-all">
+              <Star size={16} className="text-green-400 fill-green-400" />
+              <span className="text-green-300 font-bold text-sm md:text-base">Nota 4.5 no Google</span>
+              <span className="text-green-300/60 text-xs md:text-sm">• Avaliação Real</span>
             </div>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-8 leading-tight animate-fade-in-up tracking-tight">
             Transforme seu corpo,{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 drop-shadow-lg">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-500 to-green-600 drop-shadow-lg">
               eleve sua energia
             </span>
           </h1>
@@ -73,8 +73,8 @@ export default function Hero() {
               const Icon = feature.icon;
               return (
                 <div key={index} className="flex items-center gap-3 text-white/95 group">
-                  <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center group-hover:bg-orange-500/40 transition-colors">
-                    <Icon size={20} className="text-orange-400" />
+                  <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center group-hover:bg-green-500/40 transition-colors">
+                    <Icon size={20} className="text-green-400" />
                   </div>
                   <span className="font-semibold text-base md:text-lg">{feature.text}</span>
                 </div>
@@ -101,19 +101,19 @@ export default function Hero() {
           {/* Stats Section */}
           <div className="grid grid-cols-3 gap-4 md:gap-8 pt-10 md:pt-12 border-t border-white/20 animate-fade-in-up animation-delay-400">
             <div className="group">
-              <p className="text-3xl md:text-4xl font-black text-orange-400 group-hover:text-orange-300 transition-colors">
+              <p className="text-3xl md:text-4xl font-black text-green-400 group-hover:text-green-300 transition-colors">
                 500+
               </p>
               <p className="text-white/70 text-xs md:text-sm mt-2 font-semibold">Alunos Satisfeitos</p>
             </div>
             <div className="group">
-              <p className="text-3xl md:text-4xl font-black text-orange-400 group-hover:text-orange-300 transition-colors">
+              <p className="text-3xl md:text-4xl font-black text-green-400 group-hover:text-green-300 transition-colors">
                 15+
               </p>
               <p className="text-white/70 text-xs md:text-sm mt-2 font-semibold">Anos de Excelência</p>
             </div>
             <div className="group">
-              <p className="text-3xl md:text-4xl font-black text-orange-400 group-hover:text-orange-300 transition-colors">
+              <p className="text-3xl md:text-4xl font-black text-green-400 group-hover:text-green-300 transition-colors">
                 4.5★
               </p>
               <p className="text-white/70 text-xs md:text-sm mt-2 font-semibold">Avaliação Google</p>

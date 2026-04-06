@@ -23,10 +23,10 @@ export default function UserProfile({ user, onLogout }: UserProfileProps) {
         <img
           src={user.avatar}
           alt={user.name}
-          className="w-10 h-10 rounded-full border-2 border-orange-500"
+          className="w-10 h-10 rounded-full border-2 border-green-500"
         />
       ) : (
-        <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
           <User size={20} className="text-white" />
         </div>
       )}

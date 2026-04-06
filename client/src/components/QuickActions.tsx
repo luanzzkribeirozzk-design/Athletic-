@@ -10,9 +10,9 @@ export default function QuickActions() {
   const whatsappMessage = encodeURIComponent(
     'Olá! Gostaria de conhecer mais sobre os planos de academia. Qual seria a melhor forma de começar?'
   );
-  const whatsappLink = `https://wa.me/5583981551195?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/5597125446?text=${whatsappMessage}`;
   const mapsLink =
-    'https://www.google.com/maps/search/Rua+João+Dias+Corrêa,+60,+Massaranduba,+PB/@-6.3,+-35.3,15z';
+    'https://maps.app.goo.gl/p1VRigdFnPebhDFF9';
 
   return (
     <section className="py-12 md:py-16 bg-white border-t border-gray-200">
@@ -35,7 +35,7 @@ export default function QuickActions() {
           </a>
 
           {/* Telefone */}
-          <a href="tel:+5583981551195" className="w-full">
+          <a href="tel:+5597125446" className="w-full">
             <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 md:py-6 font-semibold gap-2 rounded-xl text-base md:text-lg">
               <Phone size={20} />
               Ligar

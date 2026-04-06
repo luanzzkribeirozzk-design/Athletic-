@@ -24,7 +24,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fade-in p-4">
       <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-fade-in-up">
         {/* Header */}
-        <div className="relative h-48 md:h-64 bg-gradient-to-br from-orange-500 to-orange-600 rounded-t-3xl flex items-end p-6 md:p-8">
+        <div className="relative h-48 md:h-64 bg-gradient-to-br from-green-500 to-green-600 rounded-t-3xl flex items-end p-6 md:p-8">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
@@ -71,7 +71,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
             <a
-              href={`https://wa.me/5583981551195?text=${encodeURIComponent(
+              href={`https://wa.me/5597125446?text=${encodeURIComponent(
                 `Olá! Tenho interesse no serviço de ${service.title}. Gostaria de mais informações.`
               )}`}
               target="_blank"

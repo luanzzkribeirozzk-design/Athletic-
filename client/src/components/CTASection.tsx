@@ -9,12 +9,12 @@ export default function CTASection() {
   const whatsappMessage = encodeURIComponent(
     'Olá! Gostaria de conhecer mais sobre os planos de academia. Qual seria a melhor forma de começar?'
   );
-  const whatsappLink = `https://wa.me/5583981551195?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/5597125446?text=${whatsappMessage}`;
   const mapsLink =
-    'https://www.google.com/maps/search/Rua+João+Dias+Corrêa,+60,+Massaranduba,+PB/@-6.3,+-35.3,15z';
+    'https://maps.app.goo.gl/p1VRigdFnPebhDFF9';
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-r from-green-500 via-green-600 to-green-700 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-white rounded-full blur-3xl" />
@@ -44,13 +44,13 @@ export default function CTASection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-10 md:mb-12">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
-              <Button className="w-full bg-white hover:bg-gray-100 text-orange-600 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold gap-2 group rounded-xl">
+              <Button className="w-full bg-white hover:bg-gray-100 text-green-600 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold gap-2 group rounded-xl">
                 <MessageCircle size={18} />
                 WhatsApp
               </Button>
             </a>
             <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
-              <Button className="w-full bg-orange-400 hover:bg-orange-300 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold gap-2 rounded-xl">
+              <Button className="w-full bg-green-400 hover:bg-green-300 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold gap-2 rounded-xl">
                 <MapPin size={18} />
                 Localização
               </Button>

@@ -38,15 +38,15 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="mb-12 md:mb-16 text-center">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Avaliações</span>
+          <span className="text-green-500 font-semibold text-sm uppercase tracking-wider">Avaliações</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
             O que nossos alunos acham
           </h2>
           <div className="flex items-center justify-center gap-2 mb-4">
             {[...Array(4)].map((_, i) => (
-              <Star key={i} size={20} className="text-orange-500 fill-orange-500" />
+              <Star key={i} size={20} className="text-green-500 fill-green-500" />
             ))}
-            <Star size={20} className="text-orange-500 fill-orange-500 opacity-50" />
+            <Star size={20} className="text-green-500 fill-green-500 opacity-50" />
             <span className="text-2xl font-bold text-gray-900 ml-2">4.5</span>
           </div>
           <p className="text-gray-600 text-sm">Baseado em avaliações reais de nossos alunos</p>
@@ -57,14 +57,14 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl p-6 md:p-8 border-2 border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300"
+              className="group bg-white rounded-xl p-6 md:p-8 border-2 border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(4)].map((_, i) => (
-                  <Star key={i} size={16} className="text-orange-500 fill-orange-500" />
+                  <Star key={i} size={16} className="text-green-500 fill-green-500" />
                 ))}
-                <Star size={16} className="text-orange-500 fill-orange-500 opacity-50" />
+                <Star size={16} className="text-green-500 fill-green-500 opacity-50" />
               </div>
 
               {/* Text */}

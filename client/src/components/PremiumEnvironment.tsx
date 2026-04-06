@@ -41,7 +41,7 @@ export default function PremiumEnvironment() {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="mb-12 md:mb-16 text-center">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Ambiente Premium</span>
+          <span className="text-green-500 font-semibold text-sm uppercase tracking-wider">Ambiente Premium</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
             Conheça Nossa Estrutura
           </h2>
@@ -69,7 +69,7 @@ export default function PremiumEnvironment() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{image.title}</h3>
                 <p className="text-sm md:text-base text-gray-200">{image.description}</p>
-                <p className="text-xs text-orange-400 mt-3 font-semibold">Clique para ampliar →</p>
+                <p className="text-xs text-green-400 mt-3 font-semibold">Clique para ampliar →</p>
               </div>
             </div>
           ))}
@@ -83,7 +83,7 @@ export default function PremiumEnvironment() {
             { label: 'Seguro', icon: '🔒' },
             { label: 'Moderno', icon: '⚡' },
           ].map((feature, idx) => (
-            <div key={idx} className="text-center p-4 md:p-6 rounded-xl bg-white border-2 border-gray-100 hover:border-orange-300 transition-colors">
+            <div key={idx} className="text-center p-4 md:p-6 rounded-xl bg-white border-2 border-gray-100 hover:border-green-300 transition-colors">
               <div className="text-3xl md:text-4xl mb-2">{feature.icon}</div>
               <p className="font-semibold text-gray-900 text-sm md:text-base">{feature.label}</p>
             </div>

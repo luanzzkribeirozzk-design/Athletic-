@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AA</span>
               </div>
               <div>
@@ -41,7 +41,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-orange-500 transition-colors text-sm font-medium"
+                    className="text-gray-400 hover:text-green-500 transition-colors text-sm font-medium"
                   >
                     {link.label}
                   </a>
@@ -55,23 +55,23 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-6">Contato</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone size={18} className="text-orange-500 flex-shrink-0 mt-0.5" />
+                <Phone size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
                 <a
-                  href="tel:+5583981551195"
-                  className="text-gray-400 hover:text-orange-500 transition-colors text-sm"
+                  href="tel:+5597125446"
+                  className="text-gray-400 hover:text-green-500 transition-colors text-sm"
                 >
-                  (83) 98155-1195
+                  (55) 9712-5446
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-orange-500 flex-shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
                   Rua João Dias Corrêa, 60<br />
                   Centro - Massaranduba, PB
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <Clock size={18} className="text-orange-500 flex-shrink-0 mt-0.5" />
+                <Clock size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
                   Seg-Sex: 05:45 - 21:30<br />
                   Sáb: 07:00 - 10:00
@@ -90,7 +90,7 @@ export default function Footer() {
               </li>
               <li>
                 <p className="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Avaliação</p>
-                <p className="text-orange-500 font-bold text-lg">★★★★☆ 4.5</p>
+                <p className="text-green-500 font-bold text-lg">★★★★☆ 4.5</p>
               </li>
             </ul>
           </div>
@@ -102,10 +102,10 @@ export default function Footer() {
             &copy; {currentYear} Athletic Academia. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors text-sm">
+            <a href="https://www.instagram.com/athletic.academia?igsh=ODYzdnZlMzF6dXN6" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors text-sm">
               Política de Privacidade
             </a>
-            <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors text-sm">
+            <a href="https://www.instagram.com/athletic.academia?igsh=ODYzdnZlMzF6dXN6" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 transition-colors text-sm">
               Termos de Uso
             </a>
           </div>

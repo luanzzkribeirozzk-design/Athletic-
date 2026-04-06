@@ -17,7 +17,7 @@ export default function Schedule() {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="mb-12 md:mb-16">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Horários</span>
+          <span className="text-green-500 font-semibold text-sm uppercase tracking-wider">Horários</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
             Quando estamos abertos
           </h2>
@@ -31,7 +31,7 @@ export default function Schedule() {
           {schedules.map((schedule, index) => (
             <div
               key={index}
-              className="p-6 md:p-8 rounded-2xl border-2 border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 bg-white"
+              className="p-6 md:p-8 rounded-2xl border-2 border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 bg-white"
             >
               <div className="flex items-start justify-between mb-4 md:mb-6">
                 <div>
@@ -52,7 +52,7 @@ export default function Schedule() {
 
               <div className="space-y-3 md:space-y-4">
                 <div className="flex items-center gap-3">
-                  <Clock size={18} className="text-orange-500 flex-shrink-0" />
+                  <Clock size={18} className="text-green-500 flex-shrink-0" />
                   <div>
                     <p className="text-xs md:text-sm text-gray-500 font-medium">Manhã</p>
                     <p className="text-base md:text-lg font-semibold text-gray-900">{schedule.morning}</p>
@@ -61,7 +61,7 @@ export default function Schedule() {
 
                 {schedule.afternoon !== '-' && (
                   <div className="flex items-center gap-3">
-                    <Clock size={18} className="text-orange-500 flex-shrink-0" />
+                    <Clock size={18} className="text-green-500 flex-shrink-0" />
                     <div>
                       <p className="text-xs md:text-sm text-gray-500 font-medium">Tarde/Noite</p>
                       <p className="text-base md:text-lg font-semibold text-gray-900">{schedule.afternoon}</p>
@@ -74,9 +74,9 @@ export default function Schedule() {
         </div>
 
         {/* Info Box */}
-        <div className="bg-gradient-to-r from-orange-50 to-orange-100/50 border-2 border-orange-200 rounded-2xl p-6 md:p-8">
+        <div className="bg-gradient-to-r from-orange-50 to-green-100/50 border-2 border-green-200 rounded-2xl p-6 md:p-8">
           <div className="flex items-start gap-3 md:gap-4">
-            <Calendar className="text-orange-500 flex-shrink-0 mt-1" size={24} />
+            <Calendar className="text-green-500 flex-shrink-0 mt-1" size={24} />
             <div>
               <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">Aberto o Ano Todo</h3>
               <p className="text-sm md:text-base text-gray-700 leading-relaxed">

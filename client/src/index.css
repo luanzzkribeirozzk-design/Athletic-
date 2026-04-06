@@ -46,11 +46,11 @@
 
 :root {
   /* Modernismo Minimalista com Energia Cinética */
-  --primary: oklch(0.62 0.25 29.23); /* Laranja energético #FF6B35 */
+  --primary: oklch(0.65 0.20 145); /* Verde atlético #22C55E */
   --primary-foreground: oklch(1 0 0); /* Branco */
-  --sidebar-primary: oklch(0.62 0.25 29.23);
+  --sidebar-primary: oklch(0.65 0.20 145);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --chart-1: oklch(0.62 0.25 29.23);
+  --chart-1: oklch(0.65 0.20 145);
   --chart-2: oklch(0.52 0.15 29.23);
   --chart-3: oklch(0.42 0.12 29.23);
   --chart-4: oklch(0.32 0.10 29.23);
@@ -66,19 +66,19 @@
   --secondary-foreground: oklch(0.2 0.01 0);
   --muted: oklch(0.92 0.001 0); /* Cinza mais claro */
   --muted-foreground: oklch(0.4 0.01 0);
-  --accent: oklch(0.62 0.25 29.23); /* Laranja para destaques */
+  --accent: oklch(0.65 0.20 145); /* Verde para destaques */
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.001 0); /* Cinza muito claro */
   --input: oklch(0.95 0.001 0);
-  --ring: oklch(0.62 0.25 29.23);
+  --ring: oklch(0.65 0.20 145);
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.1 0.01 0);
-  --sidebar-accent: oklch(0.62 0.25 29.23);
+  --sidebar-accent: oklch(0.65 0.20 145);
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.92 0.001 0);
-  --sidebar-ring: oklch(0.62 0.25 29.23);
+  --sidebar-ring: oklch(0.65 0.20 145);
 }
 
 .dark {
@@ -268,7 +268,7 @@
   a:focus-visible,
   input:focus-visible,
   textarea:focus-visible {
-    @apply outline-2 outline-offset-2 outline-orange-500;
+    @apply outline-2 outline-offset-2 outline-green-500;
   }
 
   .flex {
@@ -283,7 +283,7 @@
 
   /* Estilos de seleção */
   ::selection {
-    @apply bg-orange-500 text-white;
+    @apply bg-green-500 text-white;
   }
 
   @media (min-width: 640px) {

@@ -54,7 +54,7 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-fade-in p-4">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-fade-in-up">
         {/* Header */}
-        <div className="relative h-40 bg-gradient-to-br from-orange-500 to-orange-600 rounded-t-2xl flex items-center justify-center">
+        <div className="relative h-40 bg-gradient-to-br from-green-500 to-green-600 rounded-t-2xl flex items-center justify-center">
           <button
             onClick={onClose}
             disabled={isLoading}
@@ -64,7 +64,7 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
           </button>
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white">Athletic Academia</h2>
-            <p className="text-orange-100 text-sm mt-2">Acesse sua conta</p>
+            <p className="text-green-100 text-sm mt-2">Acesse sua conta</p>
           </div>
         </div>
 
@@ -74,9 +74,9 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
             // Loading State
             <div className="flex flex-col items-center justify-center py-12">
               <div className="relative w-16 h-16 mb-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full animate-spin" style={{ animationDuration: '3s' }} />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-full animate-spin" style={{ animationDuration: '3s' }} />
                 <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center">
-                  <Chrome size={32} className="text-orange-500" />
+                  <Chrome size={32} className="text-green-500" />
                 </div>
               </div>
               <p className="text-gray-700 font-semibold text-center">Conectando com Google...</p>

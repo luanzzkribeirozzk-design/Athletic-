@@ -27,7 +27,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-lg">AA</span>
           </div>
           <div className="hidden sm:block">
@@ -40,25 +40,25 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           <button
             onClick={() => scrollToSection('sobre')}
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors duration-300"
+            className="text-gray-700 hover:text-green-500 font-medium transition-colors duration-300"
           >
             Sobre
           </button>
           <button
             onClick={() => scrollToSection('servicos')}
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors duration-300"
+            className="text-gray-700 hover:text-green-500 font-medium transition-colors duration-300"
           >
             Serviços
           </button>
           <button
             onClick={() => scrollToSection('horarios')}
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors duration-300"
+            className="text-gray-700 hover:text-green-500 font-medium transition-colors duration-300"
           >
             Horários
           </button>
           <button
             onClick={() => scrollToSection('contato')}
-            className="text-gray-700 hover:text-orange-500 font-medium transition-colors duration-300"
+            className="text-gray-700 hover:text-green-500 font-medium transition-colors duration-300"
           >
             Contato
           </button>
@@ -77,8 +77,8 @@ export default function Header() {
               Entrar
             </Button>
           )}
-          <a href="tel:+5583981551195" className="flex items-center gap-2">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white gap-2">
+          <a href="tel:+5597125446" className="flex items-center gap-2">
+            <Button className="bg-green-500 hover:bg-green-600 text-white gap-2">
               <Phone size={18} />
               Ligar Agora
             </Button>
@@ -100,25 +100,25 @@ export default function Header() {
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <button
               onClick={() => scrollToSection('sobre')}
-              className="text-left text-gray-700 hover:text-orange-500 font-medium py-2"
+              className="text-left text-gray-700 hover:text-green-500 font-medium py-2"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection('servicos')}
-              className="text-left text-gray-700 hover:text-orange-500 font-medium py-2"
+              className="text-left text-gray-700 hover:text-green-500 font-medium py-2"
             >
               Serviços
             </button>
             <button
               onClick={() => scrollToSection('horarios')}
-              className="text-left text-gray-700 hover:text-orange-500 font-medium py-2"
+              className="text-left text-gray-700 hover:text-green-500 font-medium py-2"
             >
               Horários
             </button>
             <button
               onClick={() => scrollToSection('contato')}
-              className="text-left text-gray-700 hover:text-orange-500 font-medium py-2"
+              className="text-left text-gray-700 hover:text-green-500 font-medium py-2"
             >
               Contato
             </button>
@@ -140,8 +140,8 @@ export default function Header() {
                 Entrar
               </Button>
             )}
-            <a href="tel:+5583981551195" className="w-full">
-              <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white gap-2">
+            <a href="tel:+5597125446" className="w-full">
+              <Button className="w-full bg-green-500 hover:bg-green-600 text-white gap-2">
                 <Phone size={18} />
                 Ligar Agora
               </Button>

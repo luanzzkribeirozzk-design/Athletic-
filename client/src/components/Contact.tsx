@@ -10,16 +10,16 @@ export default function Contact() {
   const whatsappMessage = encodeURIComponent(
     'Olá! Gostaria de conhecer mais sobre os planos de academia. Qual seria a melhor forma de começar?'
   );
-  const whatsappLink = `https://wa.me/5583981551195?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/5597125446?text=${whatsappMessage}`;
   const mapsLink =
-    'https://www.google.com/maps/search/Rua+João+Dias+Corrêa,+60,+Massaranduba,+PB/@-6.3,+-35.3,15z';
+    'https://maps.app.goo.gl/p1VRigdFnPebhDFF9';
 
   return (
     <section id="contato" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="mb-12 md:mb-16 text-center">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Contato</span>
+          <span className="text-green-500 font-semibold text-sm uppercase tracking-wider">Contato</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
             Entre em contato conosco
           </h2>
@@ -40,7 +40,7 @@ export default function Contact() {
               <p className="text-gray-600 mb-4 text-sm md:text-base">
                 Envie uma mensagem pelo WhatsApp e receba uma resposta rápida.
               </p>
-              <p className="text-lg font-semibold text-green-600">(83) 98155-1195</p>
+              <p className="text-lg font-semibold text-green-600">(55) 9712-5446</p>
             </div>
           </a>
 
@@ -62,7 +62,7 @@ export default function Contact() {
           </a>
 
           {/* Telefone */}
-          <a href="tel:+5583981551195" className="group">
+          <a href="tel:+5597125446" className="group">
             <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 h-full">
               <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
                 <Phone size={28} className="text-blue-600" />
@@ -71,14 +71,14 @@ export default function Contact() {
               <p className="text-gray-600 mb-4 text-sm md:text-base">
                 Ligue direto para falar com nosso atendimento.
               </p>
-              <p className="text-lg font-semibold text-blue-600">(83) 98155-1195</p>
+              <p className="text-lg font-semibold text-blue-600">(55) 9712-5446</p>
             </div>
           </a>
 
           {/* Email */}
-          <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-orange-400 hover:shadow-lg transition-all duration-300">
-            <div className="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-              <Mail size={28} className="text-orange-600" />
+          <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-green-400 hover:shadow-lg transition-all duration-300">
+            <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+              <Mail size={28} className="text-green-600" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Horários</h3>
             <div className="text-gray-600 text-sm md:text-base">

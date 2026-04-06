@@ -62,7 +62,7 @@ export default function Services() {
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <div className="mb-12 md:mb-20 text-center">
-          <span className="text-orange-500 font-semibold text-sm uppercase tracking-wider">Serviços Premium</span>
+          <span className="text-green-500 font-semibold text-sm uppercase tracking-wider">Serviços Premium</span>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3 mb-4">
             Soluções Completas para Seu Fitness
           </h2>
@@ -79,7 +79,7 @@ export default function Services() {
             return (
               <div
                 key={service.id}
-                className="group bg-white rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-orange-400 hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 cursor-pointer"
+                className="group bg-white rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-green-400 hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 cursor-pointer"
               >
                 {/* Image Container */}
                 <div className="relative h-40 md:h-56 overflow-hidden bg-gray-100">
@@ -92,7 +92,7 @@ export default function Services() {
 
                   {/* Icon Badge */}
                   <div className="absolute top-4 right-4 w-12 h-12 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-500">
-                    <Icon size={24} className="text-orange-500" />
+                    <Icon size={24} className="text-green-500" />
                   </div>
 
                   {/* Title Overlay */}
@@ -110,7 +110,7 @@ export default function Services() {
                   {/* Button */}
                   <Button
                     onClick={() => setSelectedService(service.id)}
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 md:py-4 rounded-xl transition-all group-hover:shadow-lg text-base md:text-lg"
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 md:py-4 rounded-xl transition-all group-hover:shadow-lg text-base md:text-lg"
                   >
                     Saiba Mais →
                   </Button>
