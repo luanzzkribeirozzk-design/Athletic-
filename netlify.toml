@@ -1,9 +1,10 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
-  publish = "dist/public"
+  command = "pnpm install && pnpm run build"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  PNPM_VERSION = "10.4.1"
 
 [[redirects]]
   from = "/*"
