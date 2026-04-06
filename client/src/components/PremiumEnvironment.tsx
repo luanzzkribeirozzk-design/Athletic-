@@ -14,25 +14,25 @@ export default function PremiumEnvironment() {
       id: 1,
       title: 'Sala de Musculação',
       description: 'Equipamentos modernos renovados em 2025',
-      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/gym-interior-NvMBaohTq2C2tLxpKaPjCe.webp',
+      url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop',
     },
     {
       id: 2,
       title: 'Área de Cardio',
       description: 'Equipamentos de última geração',
-      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/equipment-showcase-7xPzXFzbR9cZTWctLzgrBj.webp',
+      url: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&h=600&fit=crop',
     },
     {
       id: 3,
       title: 'Treino Personalizado',
       description: 'Profissionais qualificados disponíveis',
-      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/training-session-ay7xnwpEB6ctWXiEr2YAy5.webp',
+      url: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop',
     },
     {
       id: 4,
       title: 'Ambiente Climatizado',
       description: 'Conforto e bem-estar garantidos',
-      url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663512885680/8erVSb7Jbhh6jkDfZXXMgB/fitness-motivation-qT8XnYzL5hP9mK2jR4vW1s.webp',
+      url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop',
     },
   ];
 
