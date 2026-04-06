@@ -82,10 +82,10 @@ export default function About() {
             <div className="group">
               <p className="text-xs md:text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Contato</p>
               <a
-                href="tel:+5583981551195"
+                href="tel:+5597125446"
                 className="text-base md:text-lg font-semibold text-green-400 hover:text-green-300 transition-colors"
               >
-                (83) 98155-1195
+                (55) 9712-5446
               </a>
               <p className="text-xs md:text-sm text-gray-300 mt-1">Disponível para contato</p>
             </div>
